@@ -1,10 +1,25 @@
+import 'papaparse';
+
 document.addEventListener("DOMContentLoaded", () => {
   let selectedFile = document.getElementById('input');
-  debugger
   selectedFile.addEventListener("change", handleFiles, false);
 });
 
 function handleFiles() {
-  let fileList = this.files;
-  debugger
+  let fileList = input.files[0];
+  let reader = new FileReader();
+  let trainingData = {};
+  reader.onload = (event) => {
+      const file = event.target.result;
+      const allLines = file.split(/\r\n|\n/);
+      // Reading line by line
+      allLines.forEach((line) => {
+        debugger
+          console.log(line);
+      });
+  };
+  reader.onerror = (event) => {
+      alert(event.target.error.name);
+  };
+  let text = reader.readAsText(fileList);
 }
