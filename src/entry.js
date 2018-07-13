@@ -1,4 +1,3 @@
-import 'papaparse';
 
 document.addEventListener("DOMContentLoaded", () => {
   let selectedFile = document.getElementById('input');
@@ -15,11 +14,13 @@ function handleFiles() {
       // Reading line by line
       allLines.forEach((line) => {
         debugger
-          console.log(line);
       });
   };
   reader.onerror = (event) => {
       alert(event.target.error.name);
   };
-  let text = reader.readAsText(fileList);
+}
+
+function generateTensorLearning(documentType) {
+  // find the first comma
 }
